@@ -1,0 +1,17 @@
+title: Qingxuan's Blog
+description: 个人技术博客
+author: qingxuan-Mu
+baseurl: ""
+url: "https://qingxuan-mu.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
