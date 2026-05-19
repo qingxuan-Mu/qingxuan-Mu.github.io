@@ -7,12 +7,13 @@ title: 关于
   <div class="about-header">
     <div class="about-avatar">Q</div>
     <h1>关于我</h1>
+    <p class="subtitle">一名热爱技术的开发者</p>
   </div>
 
   <div class="about-card">
     <h2><i class="fas fa-user"></i> 你好！</h2>
-    <p>我是 <strong>qingxuan-Mu</strong>，一名热爱技术的开发者。</p>
-    <p>这个博客是我的数字花园，用来记录技术学习、项目经验和日常思考。我相信持续学习和知识分享是成长的最好方式。</p>
+    <p>我是 <strong>qingxuan-Mu</strong>，这个博客是我的数字花园。</p>
+    <p>我在这里记录技术学习、项目经验和日常思考，相信持续学习和知识分享是成长的最好方式。</p>
   </div>
 
   <div class="about-card">

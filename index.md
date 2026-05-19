@@ -5,8 +5,8 @@ title: 首页
 
 <div class="hero">
   <div class="hero-badge"><i class="fas fa-feather-alt"></i> 个人博客</div>
-  <h1>探索技术与生活</h1>
-  <p>记录编程路上的思考与收获，用文字沉淀成长的点滴。</p>
+  <h1>记录 <span class="highlight">技术与生活</span></h1>
+  <p>用文字沉淀编程路上的思考与收获，持续成长，不断探索。</p>
   <div class="hero-stats">
     <div class="stat">
       <span class="stat-num">{{ site.posts.size }}</span>
@@ -17,15 +17,15 @@ title: 首页
       <span class="stat-label">分类</span>
     </div>
     <div class="stat">
-      <span class="stat-num">{{ site.posts | where_exp:"p","p.date" | size }}</span>
-      <span class="stat-label">更新</span>
+      <span class="stat-num">{{ site.posts | size | plus: 0 }}</span>
+      <span class="stat-label">发布</span>
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="section-header">
-    <h2><i class="fas fa-pen-fancy" style="color:var(--accent)"></i> 最新文章</h2>
+    <h2><i class="fas fa-pen-fancy" style="color:var(--accent);margin-right:6px;"></i> 最新文章</h2>
     <span class="section-line"></span>
     <a href="/archive" class="section-more">查看全部 →</a>
   </div>
