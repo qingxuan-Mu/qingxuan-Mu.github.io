@@ -45,7 +45,7 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-sans);
@@ -54,6 +54,8 @@ body {
   background: var(--bg);
   transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
@@ -806,18 +808,95 @@ body::before {
   transform: translateY(10px);
   transition: all 0.3s;
   box-shadow: var(--shadow);
+  z-index: 200;
 }
 
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
 /* ─── Responsive ─── */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-container { padding: 0 20px; }
+  .hero { padding: 4rem 0 3rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero p { font-size: 1rem; padding: 0 1rem; }
+  .hero-stats { gap: 2.5rem; }
+  .post-article { padding: 2.5rem 0; }
+  .post-article h1 { font-size: 1.8rem; }
+  .archive-page { padding: 2.5rem 0; }
+  .about-page { padding: 2.5rem 0; }
+}
+
+/* Phone */
 @media (max-width: 640px) {
-  .hero { padding: 3.5rem 0 2.5rem; }
-  .hero h1 { font-size: 2rem; }
-  .hero-stats { gap: 2rem; margin-top: 2rem; }
-  .post-card { padding: 1.25rem; }
-  .post-article h1 { font-size: 1.5rem; }
-  .post-article { padding: 2rem 0; }
-  .nav-links a { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+  .nav-container { height: 56px; gap: 0.75rem; }
+  .site-logo .logo-text { font-size: 0.95rem; }
+  .logo-icon { width: 26px; height: 26px; font-size: 0.75rem; }
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.78rem; }
+  .theme-toggle { width: 32px; height: 32px; font-size: 0.8rem; }
+
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-badge { font-size: 0.72rem; padding: 0.25rem 0.8rem; }
+  .hero-stats { gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+  .hero-stats .stat-num { font-size: 1.4rem; }
+
+  .section-header { margin: 2rem 0 1rem; }
+  .section-header h2 { font-size: 1rem; white-space: normal; }
+  .section-header .section-more { font-size: 0.78rem; }
+
+  .post-card { padding: 1.1rem 1.2rem; }
+  .post-card .card-title { font-size: 1rem; }
+  .post-card .card-excerpt { font-size: 0.83rem; -webkit-line-clamp: 3; }
+
+  .post-article { padding: 1.5rem 0; }
+  .post-article h1 { font-size: 1.35rem; }
+  .post-article .post-meta-bar { font-size: 0.8rem; }
+  .reading-progress { top: 56px; }
+
+  .post-content { font-size: 0.95rem; line-height: 1.85; }
+  .post-content h2 { font-size: 1.2rem; }
+  .post-content h3 { font-size: 1.05rem; }
+  .post-content pre { padding: 1rem; font-size: 0.78rem; }
+  .post-content blockquote { padding-left: 1rem; }
+
+  .post-nav { flex-direction: column; gap: 0.75rem; }
+  .post-nav a { max-width: 100%; }
+  .post-nav .next { text-align: left; margin-left: 0; }
+
+  .archive-page { padding: 1.5rem 0; }
+  .archive-page > h1 { font-size: 1.5rem; }
+  .archive-item { padding: 0.45rem 0.5rem; }
+  .archive-item .archive-date { font-size: 0.75rem; min-width: 3.5em; }
+  .archive-item a { font-size: 0.88rem; }
+
+  .about-page { padding: 1.5rem 0; }
+  .about-page .about-header { margin-bottom: 2rem; }
+  .about-page .about-avatar { width: 72px; height: 72px; font-size: 1.8rem; border-radius: 18px; }
+  .about-page h1 { font-size: 1.3rem; }
+  .about-page .about-card { padding: 1.25rem; }
+  .about-page .about-card h2 { font-size: 0.93rem; }
+  .about-page .about-card p, .about-page .about-card li { font-size: 0.88rem; }
+  .about-links { flex-direction: column; align-items: stretch; }
+  .about-links a { justify-content: center; }
+
+  .site-footer { margin-top: 3rem; padding: 2rem 0 1.5rem; }
+  .footer-desc { font-size: 0.78rem; }
+
+  .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 34px; height: 34px; font-size: 0.8rem; }
+}
+
+/* Small phone */
+@media (max-width: 380px) {
+  .nav-container { gap: 0.4rem; }
+  .nav-links a { padding: 0.25rem 0.35rem; font-size: 0.72rem; }
+  .hero h1 { font-size: 1.5rem; }
+  .hero-stats .stat-num { font-size: 1.2rem; }
+  .hero-stats .stat-label { font-size: 0.7rem; }
+  .post-card { padding: 1rem; }
+  .post-card .card-title { font-size: 0.95rem; }
 }
