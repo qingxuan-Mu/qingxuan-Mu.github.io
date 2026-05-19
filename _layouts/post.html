@@ -2,12 +2,30 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}
-    {% if page.categories %} | 分类：{{ page.categories | join: ", " }}{% endif %}
-  </p>
+<article class="post-article">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta-bar">
+      <span><i class="far fa-calendar-alt"></i> {{ page.date | date: "%Y-%m-%d" }}</span>
+      {% if page.categories %}
+      <span class="divider">|</span>
+      <span><i class="fas fa-tag"></i>
+        {% for cat in page.categories %}
+        <span class="tag">{{ cat }}</span>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </header>
   <div class="post-content">
     {{ content }}
   </div>
+  <nav class="post-nav">
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.url %}
+    <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
+    {% endif %}
+  </nav>
 </article>

@@ -5,29 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav>
+    <nav class="nav-container">
+      <a class="site-logo" href="{{ '/' | relative_url }}">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </a>
+      <div class="nav-links">
         <a href="{{ '/' | relative_url }}">首页</a>
         <a href="{{ '/archive' | relative_url }}">归档</a>
         <a href="{{ '/about' | relative_url }}">关于</a>
-      </nav>
-    </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     {{ content }}
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. Powered by GitHub Pages & Jekyll.</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span>
+          <span>{{ site.title }}</span>
+        </div>
+        <p class="footer-desc">{{ site.description }}</p>
+        <div class="footer-links">
+          <a href="https://github.com/{{ site.author }}" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-rss"></i></a>
+        </div>
+        <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} {{ site.author }}. Built with Jekyll & GitHub Pages.</p>
+      </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const backToTop = document.getElementById('backToTop');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

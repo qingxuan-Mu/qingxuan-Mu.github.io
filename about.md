@@ -3,16 +3,35 @@ layout: default
 title: 关于
 ---
 
-# 关于我
+<div class="about-page">
+  <div class="about-header">
+    <div class="about-avatar">Q</div>
+    <h1>关于我</h1>
+  </div>
 
-你好！我是 **qingxuan-Mu**。
+  <div class="about-card">
+    <h2><i class="fas fa-user"></i> 你好！</h2>
+    <p>我是 <strong>qingxuan-Mu</strong>，一名热爱技术的开发者。</p>
+    <p>这个博客是我的数字花园，用来记录技术学习、项目经验和日常思考。我相信持续学习和知识分享是成长的最好方式。</p>
+  </div>
 
-这是一个基于 GitHub Pages 搭建的个人博客，使用 Jekyll 生成静态网站。
+  <div class="about-card">
+    <h2><i class="fas fa-heart"></i> 兴趣领域</h2>
+    <ul>
+      <li><i class="fas fa-code"></i> 编程与软件开发</li>
+      <li><i class="fas fa-cloud"></i> 云计算与 DevOps</li>
+      <li><i class="fas fa-robot"></i> AI 与机器学习</li>
+      <li><i class="fas fa-book"></i> 阅读与写作</li>
+    </ul>
+  </div>
 
-- 💻 热爱编程与技术
-- 📝 分享学习心得
-- 🌱 持续成长中
-
-## 联系我
-
-- GitHub: [qingxuan-Mu](https://github.com/qingxuan-Mu)
+  <div class="about-card">
+    <h2><i class="fas fa-link"></i> 联系我</h2>
+    <p>欢迎通过 GitHub 与我交流，一起学习进步！</p>
+    <div class="about-links">
+      <a href="https://github.com/qingxuan-Mu" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+</div>
