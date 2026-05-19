@@ -373,7 +373,7 @@ body::before {
 .post-article {
   max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 24px;
 }
 
 .post-article header {
@@ -569,7 +569,7 @@ body::before {
 .archive-page {
   max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 24px;
 }
 
 .archive-page > h1 {
@@ -631,7 +631,7 @@ body::before {
 .about-page {
   max-width: 640px;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 24px;
 }
 
 .about-page .about-header {
@@ -853,7 +853,9 @@ body::before {
   .post-card .card-title { font-size: 1rem; }
   .post-card .card-excerpt { font-size: 0.83rem; -webkit-line-clamp: 3; }
 
-  .post-article { padding: 1.5rem 0; }
+  .post-article { padding: 1.5rem 20px; }
+  .archive-page { padding: 1.5rem 20px; }
+  .about-page { padding: 1.5rem 20px; }
   .post-article h1 { font-size: 1.35rem; }
   .post-article .post-meta-bar { font-size: 0.8rem; }
   .reading-progress { top: 56px; }
